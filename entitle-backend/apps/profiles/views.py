@@ -97,3 +97,23 @@ class ProfileSummaryView(APIView):
 
         serializer = ProfileSummarySerializer(data)
         return Response(serializer.data)
+
+
+class DemoProfileView(APIView):
+    """
+    GET /api/profiles/demo/
+    Returns the seeded demo profile so the frontend can load it without signup.
+    """
+    permission_classes = []  # Public — no auth needed
+
+    def get(self, request, *args, **kwargs):
+        from apps.schemes.management.commands.seed_demo import DEMO_PROFILE_NAME
+        try:
+            profile = CivicProfile.objects.get(name=DEMO_PROFILE_NAME)
+        except CivicProfile.DoesNotExist:
+            return Response(
+                {'detail': 'Demo profile not found. Run `python manage.py seed_demo` first.'},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        serializer = CivicProfileSerializer(profile)
+        return Response(serializer.data)

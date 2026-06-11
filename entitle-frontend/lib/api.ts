@@ -139,4 +139,10 @@ export const api = {
   // Notifications
   getNotifications: (profileId: string) =>
     request<Notification[]>(`/notifications/?profile=${profileId}`),
+
+  // Demo
+  getDemoProfile: async (): Promise<CivicProfile> => {
+    const raw = await request<Record<string, unknown>>('/profiles/demo/')
+    return fromSnakeProfile(raw)
+  },
 }

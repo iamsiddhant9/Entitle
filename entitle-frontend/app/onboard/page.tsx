@@ -5,7 +5,7 @@ import Link from 'next/link'
 import ChatWindow from '@/components/chat/ChatWindow'
 import { useChat } from '@/lib/hooks/useChat'
 import { useProfile } from '@/lib/hooks/useProfile'
-import { CheckCircle, Circle } from 'lucide-react'
+import { CheckCircle, Circle, Zap } from 'lucide-react'
 import { api } from '@/lib/api'
 
 // Fields we collect progressively
@@ -29,6 +29,7 @@ export default function OnboardPage() {
 
   const [collectedFields, setCollectedFields] = useState<string[]>([])
   const [navigating, setNavigating] = useState(false)
+  const [demoLoading, setDemoLoading] = useState(false)
   const profileCreatedRef = useRef(false)
   const isCreatingProfileRef = useRef(false)
 
@@ -37,6 +38,20 @@ export default function OnboardPage() {
     addInitialMessage()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Try demo: load pre-seeded demo profile directly into dashboard
+  const handleTryDemo = async () => {
+    setDemoLoading(true)
+    try {
+      const demo = await api.getDemoProfile()
+      localStorage.setItem('entitle_profile_id', String(demo.id))
+      router.push('/dashboard')
+    } catch {
+      alert('Demo profile not available yet. Please try the chat flow.')
+    } finally {
+      setDemoLoading(false)
+    }
+  }
 
   // If user already has a profile, send them straight to dashboard
   useEffect(() => {
@@ -151,7 +166,16 @@ export default function OnboardPage() {
           })}
         </div>
 
-        <div className="mt-auto pt-6 border-t border-border">
+        <div className="mt-auto pt-6 border-t border-border space-y-4">
+          {/* Try Demo shortcut */}
+          <button
+            onClick={handleTryDemo}
+            disabled={demoLoading}
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-brand text-white text-sm font-semibold hover:bg-brand/90 transition-all disabled:opacity-60 shadow-sm"
+          >
+            <Zap className="w-4 h-4" />
+            {demoLoading ? 'Loading demo…' : 'Try Demo instantly'}
+          </button>
           <p className="text-xs text-muted leading-relaxed">
             Your data is encrypted and never shared. ENTITLE is completely free.
           </p>
@@ -167,9 +191,17 @@ export default function OnboardPage() {
             <span className="w-2 h-2 rounded-full bg-brand" />
           </Link>
           <div className="flex items-center gap-3">
+            <button
+              onClick={handleTryDemo}
+              disabled={demoLoading}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand text-white text-xs font-semibold hover:bg-brand/90 transition-all disabled:opacity-60"
+            >
+              <Zap className="w-3.5 h-3.5" />
+              {demoLoading ? 'Loading…' : 'Try Demo'}
+            </button>
             <div className="flex flex-col items-end gap-1">
               <span className="text-xs text-muted">{progress}%</span>
-              <div className="w-20 h-1 bg-surface rounded-full overflow-hidden">
+              <div className="w-16 h-1 bg-surface rounded-full overflow-hidden">
                 <div className="h-full bg-brand rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
               </div>
             </div>
