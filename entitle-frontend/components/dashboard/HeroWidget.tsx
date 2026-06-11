@@ -33,7 +33,7 @@ export default function HeroWidget({ summary, onApplyAll, onRescan, isScanning }
   const confidence = summary?.schemeCount ? Math.min(95, 70 + summary.schemeCount * 3) : 0
 
   return (
-    <div className="bg-ink rounded-2xl p-5 sm:p-6 md:p-8 text-white">
+    <div className="bg-surface border border-border rounded-2xl p-5 sm:p-6 md:p-8 text-white">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
         {/* Left */}
         <div>
@@ -55,7 +55,7 @@ export default function HeroWidget({ summary, onApplyAll, onRescan, isScanning }
                 <span className="text-xs text-white/40 font-medium">Profile completeness</span>
                 <span className="text-xs font-bold text-brand">{confidence}%</span>
               </div>
-              <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+              <div className="h-1.5 bg-surface/10 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-brand rounded-full transition-all duration-700"
                   style={{ width: `${confidence}%` }}

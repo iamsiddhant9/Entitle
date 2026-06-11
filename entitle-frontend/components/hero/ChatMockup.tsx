@@ -25,7 +25,7 @@ export default function ChatMockup() {
   }, [])
 
   return (
-    <div className="bg-white border border-border rounded-2xl shadow-xl overflow-hidden w-full max-w-sm">
+    <div className="bg-surface border border-border rounded-2xl shadow-xl overflow-hidden w-full max-w-sm">
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-surface/40">
         <div className="relative">
@@ -55,7 +55,7 @@ export default function ChatMockup() {
         {/* User message */}
         {phase !== 'greeting' && (
           <div className="flex justify-end animate-fadeUp">
-            <div className="bg-ink text-white text-sm rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] leading-relaxed">
+            <div className="bg-white text-background text-sm rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] leading-relaxed">
               I&apos;m 48, carpenter, OBC category, from Satara. Family of four.
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function ChatMockup() {
             <div className="text-xs text-secondary mb-3">estimated annual entitlements</div>
             <div className="space-y-1.5">
               {mockSchemes.map(s => (
-                <div key={s.name} className="flex items-center justify-between text-xs bg-white/70 rounded-lg px-2.5 py-1.5">
+                <div key={s.name} className="flex items-center justify-between text-xs bg-surface/70 rounded-lg px-2.5 py-1.5">
                   <span className="text-ink font-medium truncate mr-2">{s.name}</span>
                   <span className="text-brand font-semibold shrink-0">{s.amount}</span>
                 </div>

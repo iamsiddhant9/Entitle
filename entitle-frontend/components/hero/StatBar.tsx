@@ -64,7 +64,7 @@ export default function StatBar() {
   return (
     <div
       ref={ref}
-      className="inline-flex divide-x divide-border bg-white border border-border rounded-2xl shadow-sm overflow-hidden mt-10"
+      className="inline-flex divide-x divide-border bg-surface border border-border rounded-2xl shadow-sm overflow-hidden mt-10"
     >
       {stats.map(stat => (
         <Stat key={stat.label} stat={stat} active={active} />

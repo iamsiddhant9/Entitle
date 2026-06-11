@@ -2,18 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Dark Theme (Default) ─────────────────────────────────── */
+:root {
+  --color-background:   #09090b;
+  --color-ink:          #fafafe;
+  --color-secondary:    #a1a1aa;
+  --color-muted:        #71717a;
+  --color-brand:        #1D9E75;
+  --color-brand-dark:   #4ade80;
+  --color-accent:       #3b82f6;
+  --color-surface:      #18181b;
+  --color-surface-green:#064e3b;
+  --color-border:       #27272a;
+}
+
+/* ─── Light Theme ──────────────────────────────────────────── */
+:root.light {
+  --color-background:   #f9fafb;
+  --color-ink:          #111827;
+  --color-secondary:    #4b5563;
+  --color-muted:        #9ca3af;
+  --color-brand:        #1D9E75;
+  --color-brand-dark:   #059669;
+  --color-accent:       #2563eb;
+  --color-surface:      #ffffff;
+  --color-surface-green:#d1fae5;
+  --color-border:       #e5e7eb;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Prevent horizontal overflow on mobile */
   overflow-x: hidden;
 }
 
+/* Smooth theme transitions on all elements */
+*, *::before, *::after {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease;
+}
+
 body {
-  background-color: #FAFAF7;
+  background-color: var(--color-background);
+  color: var(--color-ink);
   overflow-x: hidden;
 }
 
@@ -32,3 +65,4 @@ body {
     scrollbar-width: none;
   }
 }
+

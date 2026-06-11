@@ -55,7 +55,7 @@ export default function UnclaimedAssetCard({ asset }: UnclaimedAssetCardProps) {
   }
 
   return (
-    <div className="bg-white border border-border rounded-2xl p-5 hover:border-muted hover:shadow-sm transition-all duration-200">
+    <div className="bg-surface border border-border rounded-2xl p-5 hover:border-muted hover:shadow-sm transition-all duration-200">
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="flex items-start gap-3">

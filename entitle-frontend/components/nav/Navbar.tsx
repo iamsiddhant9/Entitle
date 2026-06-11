@@ -1,7 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
+import { useTheme } from '@/lib/ThemeContext'
 
 const navLinks = [
   { label: 'How it works', href: '#how-it-works' },
@@ -12,6 +13,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -49,11 +51,24 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTA + Theme Toggle */}
         <div className="hidden md:flex items-center gap-3">
+          {/* Theme toggle */}
+          <button
+            id="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="p-2 rounded-lg border border-border bg-surface hover:bg-border text-secondary hover:text-ink transition-all duration-150"
+          >
+            {theme === 'dark'
+              ? <Sun className="w-4 h-4" />
+              : <Moon className="w-4 h-4" />
+            }
+          </button>
+
           <Link
             href="/onboard"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-ink text-white hover:bg-secondary transition-all duration-150 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-ink text-background hover:opacity-90 transition-all duration-150 shadow-sm"
           >
             Check my entitlements
             <span className="text-brand">→</span>
@@ -61,13 +76,27 @@ export default function Navbar() {
         </div>
 
         {/* Mobile hamburger */}
-        <button
-          className="md:hidden p-2 rounded-lg hover:bg-surface transition-colors"
-          onClick={() => setMobileOpen(v => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-5 h-5 text-ink" /> : <Menu className="w-5 h-5 text-ink" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          {/* Mobile theme toggle */}
+          <button
+            id="theme-toggle-mobile"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="p-2 rounded-lg border border-border bg-surface text-secondary hover:text-ink transition-colors"
+          >
+            {theme === 'dark'
+              ? <Sun className="w-4 h-4" />
+              : <Moon className="w-4 h-4" />
+            }
+          </button>
+          <button
+            className="p-2 rounded-lg hover:bg-surface transition-colors"
+            onClick={() => setMobileOpen(v => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5 text-ink" /> : <Menu className="w-5 h-5 text-ink" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -87,7 +116,7 @@ export default function Navbar() {
             <Link
               href="/onboard"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-ink text-white hover:bg-secondary transition-all duration-150"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-ink text-background hover:opacity-90 transition-all duration-150"
             >
               Check my entitlements <span className="text-brand">→</span>
             </Link>
@@ -97,3 +126,4 @@ export default function Navbar() {
     </header>
   )
 }
+

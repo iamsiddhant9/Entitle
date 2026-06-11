@@ -31,7 +31,7 @@ export default function ChatBubble({ message }: ChatBubbleProps) {
           className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
             isAgent
               ? 'bg-surface text-ink rounded-tl-sm'
-              : 'bg-ink text-white rounded-tr-sm'
+              : 'bg-white text-background rounded-tr-sm'
           }`}
         >
           {message.content}

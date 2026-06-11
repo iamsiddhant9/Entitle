@@ -13,7 +13,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink border-t border-white/10 py-14">
+    <footer className="bg-surface border-t border-border py-14">
       <div className="max-w-6xl mx-auto px-5">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
           {/* Left: Logo + tagline */}

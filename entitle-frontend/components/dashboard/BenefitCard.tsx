@@ -57,7 +57,7 @@ export default function BenefitCard({ entitlement, onApplied }: BenefitCardProps
 
   return (
     <div
-      className="bg-white border border-border rounded-2xl overflow-hidden hover:border-muted hover:shadow-sm transition-all duration-200"
+      className="bg-surface border border-border rounded-2xl overflow-hidden hover:border-muted hover:shadow-sm transition-all duration-200"
     >
       {/* Main row */}
       <div

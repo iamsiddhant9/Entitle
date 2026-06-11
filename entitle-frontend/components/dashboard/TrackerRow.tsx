@@ -34,7 +34,7 @@ export default function TrackerRow({ entitlement }: TrackerRowProps) {
   const label = statusLabel[entitlement.status] || entitlement.status
 
   return (
-    <div className="flex items-center gap-4 px-5 py-4 bg-white border border-border rounded-2xl hover:border-muted transition-all duration-200">
+    <div className="flex items-center gap-4 px-5 py-4 bg-surface border border-border rounded-2xl hover:border-muted transition-all duration-200">
       {/* Status dot */}
       <Circle className={`w-3 h-3 fill-current shrink-0 ${dotColor}`} />
 

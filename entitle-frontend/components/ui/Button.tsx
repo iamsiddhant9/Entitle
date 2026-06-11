@@ -6,7 +6,7 @@ const styles: Record<ButtonVariant, string> = {
   primary: 'bg-brand text-white hover:bg-brand-dark shadow-sm hover:shadow-md',
   secondary: 'bg-transparent text-ink border border-border hover:border-muted',
   ghost: 'bg-transparent text-secondary hover:text-ink hover:bg-surface',
-  white: 'bg-white text-ink hover:bg-surface shadow-sm',
+  white: 'bg-surface text-ink hover:bg-surface shadow-sm',
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

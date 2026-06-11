@@ -8,7 +8,7 @@ const variantStyles: Record<BadgeVariant, string> = {
   amber: 'bg-amber-50 text-amber-700 border border-amber-200',
   red: 'bg-red-50 text-red-700 border border-red-200',
   gray: 'bg-surface text-secondary border border-border',
-  dark: 'bg-ink text-white border border-ink',
+  dark: 'bg-white text-background border border-ink',
 }
 
 interface BadgeProps {

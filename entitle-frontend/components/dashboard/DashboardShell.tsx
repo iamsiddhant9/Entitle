@@ -101,7 +101,7 @@ export default function DashboardShell({
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 whitespace-nowrap ${
                 activeTab === tab.id
-                  ? 'bg-white text-ink shadow-sm'
+                  ? 'bg-surface text-ink shadow-sm'
                   : 'text-secondary hover:text-ink'
               }`}
             >

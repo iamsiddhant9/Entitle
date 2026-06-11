@@ -60,7 +60,7 @@ export default function ResultCard({ data }: ResultCardProps) {
         {data.entitlements.slice(0, 4).map(e => (
           <div
             key={e.id}
-            className="flex items-center justify-between py-2 px-3 bg-white/70 rounded-xl border border-brand/10"
+            className="flex items-center justify-between py-2 px-3 bg-surface/70 rounded-xl border border-brand/10"
           >
             <div className="flex items-center gap-2 min-w-0">
               <TrendingUp className="w-3.5 h-3.5 text-brand shrink-0" />

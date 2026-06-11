@@ -60,7 +60,7 @@ export default function WhatAgentFinds() {
             return (
               <div
                 key={item.title}
-                className="bg-white border border-border rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="bg-surface border border-border rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div className={`w-11 h-11 rounded-xl ${item.color} flex items-center justify-center mb-5`}>
                   <Icon className="w-5 h-5" />

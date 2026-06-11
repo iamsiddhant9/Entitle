@@ -50,11 +50,11 @@ export default function ProfilePanel({ profile, onSave }: ProfilePanelProps) {
     }
   }
 
-  const inputClass = 'w-full px-4 py-2.5 rounded-xl border border-border bg-white text-sm text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/20 transition-all'
+  const inputClass = 'w-full px-4 py-2.5 rounded-xl border border-border bg-surface text-sm text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/20 transition-all'
   const labelClass = 'block text-xs font-semibold text-secondary uppercase tracking-wider mb-1.5'
 
   return (
-    <div className="bg-white border border-border rounded-2xl p-6">
+    <div className="bg-surface border border-border rounded-2xl p-6">
       <h2 className="text-lg font-bold text-ink mb-6">My Profile</h2>
 
       <div className="grid md:grid-cols-2 gap-5">
@@ -181,7 +181,7 @@ export default function ProfilePanel({ profile, onSave }: ProfilePanelProps) {
               }`}
             >
               <div
-                className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow-sm transition-transform duration-200 ${
+                className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-surface shadow-sm transition-transform duration-200 ${
                   form[toggle.key] ? 'translate-x-5' : 'translate-x-0'
                 }`}
               />

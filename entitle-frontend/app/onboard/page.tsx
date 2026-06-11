@@ -130,7 +130,7 @@ export default function OnboardPage() {
   return (
     <div className="flex h-screen h-[100dvh] bg-background overflow-hidden">
       {/* Left sidebar — hidden on mobile */}
-      <div className="hidden lg:flex flex-col w-72 border-r border-border bg-white p-6 shrink-0">
+      <div className="hidden lg:flex flex-col w-72 border-r border-border bg-surface p-6 shrink-0">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 mb-8">
           <span className="text-xl font-bold text-ink tracking-tight">entitle</span>
@@ -185,7 +185,7 @@ export default function OnboardPage() {
       {/* Main chat area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile header */}
-        <div className="lg:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-white shrink-0">
+        <div className="lg:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-surface shrink-0">
           <Link href="/" className="flex items-center gap-1.5">
             <span className="text-lg font-bold text-ink">entitle</span>
             <span className="w-2 h-2 rounded-full bg-brand" />
@@ -209,7 +209,7 @@ export default function OnboardPage() {
         </div>
 
         {/* Chat header */}
-        <div className="flex items-center gap-3 px-5 py-4 border-b border-border bg-white">
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-border bg-surface">
           <div className="relative">
             <div className="w-9 h-9 rounded-full bg-brand flex items-center justify-center">
               <span className="text-white font-bold text-sm">E</span>

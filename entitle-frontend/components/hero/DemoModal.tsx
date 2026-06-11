@@ -32,7 +32,7 @@ function DemoChat({ playing }: { playing: boolean }) {
   }, [playing])
 
   return (
-    <div className="bg-white border border-border rounded-2xl shadow-xl overflow-hidden w-full">
+    <div className="bg-surface border border-border rounded-2xl shadow-xl overflow-hidden w-full">
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-surface/40">
         <div className="relative">
@@ -67,7 +67,7 @@ function DemoChat({ playing }: { playing: boolean }) {
         {/* User message */}
         {(phase === 'user_msg' || phase === 'typing' || phase === 'result' || phase === 'followup') && (
           <div className="flex justify-end animate-fadeUp">
-            <div className="bg-ink text-white text-sm rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] leading-relaxed">
+            <div className="bg-white text-background text-sm rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] leading-relaxed">
               I&apos;m 48, carpenter, OBC category, from Satara. Family of four. Annual income ₹1.2 lakh.
             </div>
           </div>
@@ -90,7 +90,7 @@ function DemoChat({ playing }: { playing: boolean }) {
             <div className="text-xs text-secondary mb-3">estimated annual entitlements</div>
             <div className="space-y-1.5">
               {mockSchemes.map(s => (
-                <div key={s.name} className="flex items-center justify-between text-xs bg-white/70 rounded-lg px-3 py-2">
+                <div key={s.name} className="flex items-center justify-between text-xs bg-surface/70 rounded-lg px-3 py-2">
                   <span className="text-ink font-medium truncate mr-2">{s.name}</span>
                   <span className="text-brand font-semibold shrink-0">{s.amount}</span>
                 </div>
@@ -164,7 +164,7 @@ export default function DemoModal() {
       <button
         id="live-demo-btn"
         onClick={openModal}
-        className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold bg-white border border-border text-ink hover:border-muted hover:shadow-sm transition-all duration-150"
+        className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold bg-surface border border-border text-ink hover:border-muted hover:shadow-sm transition-all duration-150"
       >
         <div className="w-6 h-6 rounded-full bg-ink flex items-center justify-center">
           <Play className="w-3 h-3 text-white fill-white ml-0.5" />
@@ -195,13 +195,13 @@ export default function DemoModal() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={replay}
-                  className="text-xs text-white/70 hover:text-white bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-all"
+                  className="text-xs text-white/70 hover:text-white bg-surface/10 hover:bg-surface/20 px-3 py-1.5 rounded-lg transition-all"
                 >
                   ↺ Replay
                 </button>
                 <button
                   onClick={closeModal}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all"
+                  className="w-8 h-8 rounded-full bg-surface/10 hover:bg-surface/20 flex items-center justify-center transition-all"
                 >
                   <X className="w-4 h-4 text-white" />
                 </button>

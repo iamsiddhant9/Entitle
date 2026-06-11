@@ -52,7 +52,7 @@ export default function AutonomousFeatures() {
             return (
               <div
                 key={feature.title}
-                className="bg-white border border-border rounded-2xl p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="bg-surface border border-border rounded-2xl p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className={`w-12 h-12 rounded-xl ${feature.iconBg} flex items-center justify-center`}>

@@ -56,7 +56,7 @@ export default function HowItWorks() {
             return (
               <div
                 key={step.number}
-                className={`relative bg-white border border-border rounded-2xl p-8 ${step.border}`}
+                className={`relative bg-surface border border-border rounded-2xl p-8 ${step.border}`}
               >
                 {/* Step number */}
                 <div className="text-xs font-bold text-muted uppercase tracking-widest mb-6">
@@ -81,7 +81,7 @@ export default function HowItWorks() {
 
                 {/* Connector arrow (hidden on last card) */}
                 {step.number !== '03' && (
-                  <div className="hidden md:block absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-white border border-border rounded-full flex items-center justify-center z-10">
+                  <div className="hidden md:block absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-surface border border-border rounded-full flex items-center justify-center z-10">
                     <span className="text-muted text-sm font-medium">→</span>
                   </div>
                 )}

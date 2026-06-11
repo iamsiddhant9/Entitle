@@ -55,7 +55,7 @@ export default function ProblemScale() {
   }, [])
 
   return (
-    <section className="py-24 bg-ink" ref={ref}>
+    <section className="py-24 bg-surface" ref={ref}>
       <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
         <div className="text-center mb-16">
