@@ -61,7 +61,7 @@ export default function DashboardShell({
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-5xl mx-auto px-5 py-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-5 sm:py-8">
 
         {/* Notification banner */}
         {unreadNotifs.length > 0 && !notifDismissed && (
@@ -94,12 +94,12 @@ export default function DashboardShell({
         </div>
 
         {/* Tabs */}
-        <div className="flex items-center gap-1 p-1 bg-surface border border-border rounded-xl mb-6 overflow-x-auto scrollbar-hide">
+        <div className="flex items-center gap-1 p-1 bg-surface border border-border rounded-xl mb-4 sm:mb-6 overflow-x-auto scrollbar-hide -mx-1 px-1">
           {tabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 whitespace-nowrap ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'bg-white text-ink shadow-sm'
                   : 'text-secondary hover:text-ink'

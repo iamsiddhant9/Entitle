@@ -1,6 +1,12 @@
 import type { CivicProfile, Entitlement, UnclaimedAsset, ChatMessage, Notification, ProfileSummary, Scheme } from './types'
 
-const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000/api'
+// Normalize: strip trailing slash, then ensure /api is always present
+function normalizeBase(url: string): string {
+  const stripped = url.replace(/\/+$/, '')
+  if (stripped.endsWith('/api')) return stripped
+  return `${stripped}/api`
+}
+const BASE = normalizeBase(process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000/api')
 
 // Convert camelCase profile fields to snake_case for Django backend
 function toSnakeProfile(data: Partial<CivicProfile>): Record<string, unknown> {

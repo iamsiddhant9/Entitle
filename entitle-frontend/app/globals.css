@@ -8,10 +8,19 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
 }
 
 body {
   background-color: #FAFAF7;
+  overflow-x: hidden;
+}
+
+/* Mobile-safe full height (accounts for iOS Safari URL bar) */
+.h-screen {
+  height: 100vh;
+  height: 100dvh;
 }
 
 @layer utilities {

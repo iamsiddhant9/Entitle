@@ -33,14 +33,14 @@ export default function HeroWidget({ summary, onApplyAll, onRescan, isScanning }
   const confidence = summary?.schemeCount ? Math.min(95, 70 + summary.schemeCount * 3) : 0
 
   return (
-    <div className="bg-ink rounded-2xl p-6 md:p-8 text-white">
+    <div className="bg-ink rounded-2xl p-5 sm:p-6 md:p-8 text-white">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
         {/* Left */}
         <div>
           <div className="text-xs font-bold text-white/40 uppercase tracking-widest mb-3">
             Your total annual entitlements
           </div>
-          <div className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-2">
+          <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-2">
             {summary ? formatAmount(total) : '—'}
           </div>
           <div className="text-sm text-white/50">
@@ -71,7 +71,7 @@ export default function HeroWidget({ summary, onApplyAll, onRescan, isScanning }
         </div>
 
         {/* Right: Actions */}
-        <div className="flex flex-col gap-3 shrink-0">
+        <div className="flex flex-row sm:flex-col gap-2 sm:gap-3 shrink-0 mt-2 md:mt-0">
           <Button
             variant="primary"
             size="lg"

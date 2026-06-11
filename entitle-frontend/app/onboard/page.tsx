@@ -113,7 +113,7 @@ export default function OnboardPage() {
   const progress = Math.round((collectedFields.length / progressFields.length) * 100)
 
   return (
-    <div className="flex h-screen bg-background overflow-hidden">
+    <div className="flex h-screen h-[100dvh] bg-background overflow-hidden">
       {/* Left sidebar — hidden on mobile */}
       <div className="hidden lg:flex flex-col w-72 border-r border-border bg-white p-6 shrink-0">
         {/* Logo */}
@@ -161,12 +161,19 @@ export default function OnboardPage() {
       {/* Main chat area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile header */}
-        <div className="lg:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-white">
+        <div className="lg:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-white shrink-0">
           <Link href="/" className="flex items-center gap-1.5">
             <span className="text-lg font-bold text-ink">entitle</span>
             <span className="w-2 h-2 rounded-full bg-brand" />
           </Link>
-          <div className="text-xs text-muted">{progress}% complete</div>
+          <div className="flex items-center gap-3">
+            <div className="flex flex-col items-end gap-1">
+              <span className="text-xs text-muted">{progress}%</span>
+              <div className="w-20 h-1 bg-surface rounded-full overflow-hidden">
+                <div className="h-full bg-brand rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Chat header */}

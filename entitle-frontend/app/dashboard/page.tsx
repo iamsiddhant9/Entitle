@@ -43,13 +43,13 @@ export default function DashboardPage() {
     <>
       {/* Dashboard Navbar */}
       <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-5xl mx-auto px-5 h-14 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-1.5">
             <span className="text-lg font-bold text-ink tracking-tight">entitle</span>
             <span className="w-1.5 h-1.5 rounded-full bg-brand" />
           </Link>
           <div className="flex items-center gap-3">
-            <span className="text-sm text-muted">
+            <span className="text-sm text-muted hidden sm:block">
               {profile.name}
             </span>
             <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center">
