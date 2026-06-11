@@ -3,6 +3,7 @@ import Link from 'next/link'
 import StatBar from './StatBar'
 import ChatMockup from './ChatMockup'
 import DemoModal from './DemoModal'
+import TypewriterTitle from './TypewriterTitle'
 import { ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
@@ -30,13 +31,7 @@ export default function HeroSection() {
             </div>
 
             {/* H1 */}
-            <h1 className="text-5xl md:text-6xl lg:text-[64px] font-bold text-ink leading-[1.08] tracking-tight mb-6">
-              Your money.
-              <br />
-              <span className="text-brand">Your rights.</span>
-              <br />
-              Automatically claimed.
-            </h1>
+            <TypewriterTitle />
 
             {/* Subtext */}
             <p className="text-lg text-secondary leading-relaxed mb-8 max-w-lg">
