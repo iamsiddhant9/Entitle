@@ -111,9 +111,16 @@ class DemoProfileView(APIView):
         try:
             profile = CivicProfile.objects.get(name=DEMO_PROFILE_NAME)
         except CivicProfile.DoesNotExist:
-            return Response(
-                {'detail': 'Demo profile not found. Run `python manage.py seed_demo` first.'},
-                status=status.HTTP_404_NOT_FOUND,
-            )
+            # Auto-seed if it doesn't exist (e.g. if Render build command failed/was skipped)
+            from django.core.management import call_command
+            try:
+                call_command('seed_demo', verbosity=0)
+                profile = CivicProfile.objects.get(name=DEMO_PROFILE_NAME)
+            except Exception as e:
+                return Response(
+                    {'detail': f'Demo profile could not be auto-seeded: {str(e)}'},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                )
+                
         serializer = CivicProfileSerializer(profile)
         return Response(serializer.data)
