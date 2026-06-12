@@ -1,5 +1,6 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import type { CivicProfile, Entitlement, UnclaimedAsset, ProfileSummary, Notification } from '@/lib/types'
 import HeroWidget from './HeroWidget'
 import BenefitCard from './BenefitCard'
@@ -7,7 +8,7 @@ import TrackerRow from './TrackerRow'
 import UnclaimedAssetCard from './UnclaimedAssetCard'
 import ProfilePanel from './ProfilePanel'
 import { api } from '@/lib/api'
-import { Bell, X, Search, ClipboardList, Banknote } from 'lucide-react'
+import { Bell, X, Search, ClipboardList, Banknote, AlertTriangle } from 'lucide-react'
 
 type Tab = 'benefits' | 'tracker' | 'assets' | 'profile'
 
@@ -30,7 +31,18 @@ export default function DashboardShell({
   onUpdateProfile,
   onRefresh,
 }: DashboardShellProps) {
-  const [activeTab, setActiveTab] = useState<Tab>('benefits')
+  const searchParams = useSearchParams()
+  const initialTab = (searchParams.get('tab') as Tab) || 'benefits'
+  const [activeTab, setActiveTab] = useState<Tab>(initialTab)
+
+  // Update tab if the URL changes while on the page
+  useEffect(() => {
+    const tabParam = searchParams.get('tab') as Tab
+    if (tabParam && ['benefits', 'tracker', 'assets', 'profile'].includes(tabParam)) {
+      setActiveTab(tabParam)
+    }
+  }, [searchParams])
+
   const [isScanning, setIsScanning] = useState(false)
   const [notifDismissed, setNotifDismissed] = useState(false)
 

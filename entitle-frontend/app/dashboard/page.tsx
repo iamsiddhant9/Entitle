@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import DashboardShell from '@/components/dashboard/DashboardShell'
 import { useProfile } from '@/lib/hooks/useProfile'
@@ -11,24 +11,43 @@ import type { Notification } from '@/lib/types'
 
 export default function DashboardPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const isCivicTab = searchParams.get('tab') === 'civic'
+
   const { profile, profileId, loading, updateProfile } = useProfile()
-  const { entitlements, assets, summary } = useBenefits(profileId)
+  
+  const effectiveProfileId = profileId || (isCivicTab ? 'demo-civic' : null)
+  const effectiveProfile = profile || (isCivicTab ? {
+    id: 'demo-civic',
+    name: 'Demo User',
+    age: 35,
+    gender: 'other',
+    location: 'Nagpur',
+    caste: 'General',
+    occupation: 'Resident',
+    maritalStatus: 'single',
+    annualIncome: 500000,
+    disabilities: 'none',
+    familySize: 4,
+  } : null)
+
+  const { entitlements, assets, summary } = useBenefits(effectiveProfileId)
 
   const notifications = useQuery<Notification[]>({
-    queryKey: ['notifications', profileId],
-    queryFn: () => api.getNotifications(profileId!),
-    enabled: !!profileId,
+    queryKey: ['notifications', effectiveProfileId],
+    queryFn: () => api.getNotifications(effectiveProfileId!),
+    enabled: !!effectiveProfileId,
     refetchInterval: 60000,
   })
 
   // Redirect if no profile
   useEffect(() => {
-    if (!loading && !profileId) {
+    if (!loading && !effectiveProfileId) {
       router.push('/onboard')
     }
-  }, [loading, profileId, router])
+  }, [loading, effectiveProfileId, router])
 
-  if (loading || !profile) {
+  if (loading || !effectiveProfile) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
@@ -50,11 +69,11 @@ export default function DashboardPage() {
           </Link>
           <div className="flex items-center gap-3">
             <span className="text-sm text-muted hidden sm:block">
-              {profile.name}
+              {effectiveProfile.name}
             </span>
             <div className="w-8 h-8 rounded-full bg-brand flex items-center justify-center">
               <span className="text-white text-xs font-bold">
-                {profile.name.charAt(0).toUpperCase()}
+                {effectiveProfile.name.charAt(0).toUpperCase()}
               </span>
             </div>
           </div>
@@ -62,7 +81,7 @@ export default function DashboardPage() {
       </header>
 
       <DashboardShell
-        profile={profile}
+        profile={effectiveProfile as any}
         entitlements={entitlements.data || []}
         assets={assets.data || []}
         summary={summary.data}

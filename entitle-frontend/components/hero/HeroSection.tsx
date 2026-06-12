@@ -4,7 +4,7 @@ import StatBar from './StatBar'
 import HeroCardSwap from './HeroCardSwap'
 import DemoModal from './DemoModal'
 import TypewriterTitle from './TypewriterTitle'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, AlertTriangle } from 'lucide-react'
 
 export default function HeroSection() {
   return (
@@ -48,6 +48,13 @@ export default function HeroSection() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <DemoModal />
+              <Link
+                href="/civic"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold bg-surface border border-brand/20 text-brand hover:bg-brand/5 transition-all duration-150 shadow-sm"
+              >
+                <AlertTriangle className="w-4 h-4" />
+                Report a Civic Issue
+              </Link>
             </div>
 
             <p className="text-xs text-muted">
