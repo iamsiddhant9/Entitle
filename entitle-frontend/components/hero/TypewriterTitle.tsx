@@ -97,7 +97,7 @@ export default function TypewriterTitle() {
   }, [displayedText, phase, seqIdx])
 
   return (
-    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-ink leading-[1.15] md:leading-[1.08] tracking-tight mb-6 h-[140px] sm:h-[180px] md:h-[210px] lg:h-[220px] flex flex-col justify-end">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink leading-[1.2] tracking-tight mb-6 h-[120px] sm:h-[150px] md:h-[175px] flex flex-col justify-end">
       <span>{displayedText.l1}</span>
       <span className="text-brand">{displayedText.l2}</span>
       <span>

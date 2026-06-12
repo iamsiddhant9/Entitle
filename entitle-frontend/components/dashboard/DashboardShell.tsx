@@ -7,7 +7,7 @@ import TrackerRow from './TrackerRow'
 import UnclaimedAssetCard from './UnclaimedAssetCard'
 import ProfilePanel from './ProfilePanel'
 import { api } from '@/lib/api'
-import { Bell, X } from 'lucide-react'
+import { Bell, X, Search, ClipboardList, Banknote } from 'lucide-react'
 
 type Tab = 'benefits' | 'tracker' | 'assets' | 'profile'
 
@@ -122,7 +122,9 @@ export default function DashboardShell({
           <div className="space-y-4">
             {entitlements.length === 0 ? (
               <div className="text-center py-16 text-muted">
-                <div className="text-4xl mb-3">🔍</div>
+                <div className="w-12 h-12 rounded-2xl bg-surface-green border border-brand/20 flex items-center justify-center mx-auto mb-3">
+                  <Search className="w-6 h-6 text-brand" />
+                </div>
                 <div className="font-semibold text-ink mb-1">No entitlements yet</div>
                 <div className="text-sm">Click &quot;Re-scan schemes&quot; to find your benefits.</div>
               </div>
@@ -147,7 +149,9 @@ export default function DashboardShell({
             </div>
             {entitlements.length === 0 ? (
               <div className="text-center py-16 text-muted">
-                <div className="text-4xl mb-3">📋</div>
+                <div className="w-12 h-12 rounded-2xl bg-surface-green border border-brand/20 flex items-center justify-center mx-auto mb-3">
+                  <ClipboardList className="w-6 h-6 text-brand" />
+                </div>
                 <div className="font-semibold text-ink mb-1">No applications yet</div>
                 <div className="text-sm">Apply for schemes in the Benefits tab.</div>
               </div>
@@ -161,7 +165,9 @@ export default function DashboardShell({
           <div className="grid sm:grid-cols-2 gap-4">
             {assets.length === 0 ? (
               <div className="col-span-2 text-center py-16 text-muted">
-                <div className="text-4xl mb-3">💰</div>
+                <div className="w-12 h-12 rounded-2xl bg-surface-green border border-brand/20 flex items-center justify-center mx-auto mb-3">
+                  <Banknote className="w-6 h-6 text-brand" />
+                </div>
                 <div className="font-semibold text-ink mb-1">No unclaimed assets found</div>
                 <div className="text-sm">We&apos;ll notify you if any appear.</div>
               </div>

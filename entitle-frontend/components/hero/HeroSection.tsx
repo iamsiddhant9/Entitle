@@ -16,9 +16,9 @@ export default function HeroSection() {
       </div>
 
       <div className="max-w-6xl mx-auto px-5 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left: Copy */}
-          <div>
+          <div className="lg:pt-10">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2.5 bg-surface-green border border-brand/20 rounded-full px-4 py-2 mb-8">
               <span className="relative flex h-2.5 w-2.5">

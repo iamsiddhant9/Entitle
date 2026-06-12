@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
+import { FileText, MapPin, Wallet } from 'lucide-react'
 
 /* ── Animated counter ─────────────────────────────────────────── */
 function useTickingCounter(start: number, tickMin: number, tickMax: number, intervalMs: number) {
@@ -132,12 +133,12 @@ export default function EntitlementGapDashboard() {
             {/* 3 sub-stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { label: 'Schemes matched', value: schemesToday.toLocaleString('en-IN'), icon: '📋' },
-                { label: 'States covered', value: '28', icon: '🗺️' },
-                { label: 'Avg per user', value: '₹1.52L', icon: '💰' },
+                { label: 'Schemes matched', value: schemesToday.toLocaleString('en-IN'), Icon: FileText },
+                { label: 'States covered', value: '28', Icon: MapPin },
+                { label: 'Avg per user', value: '₹1.52L', Icon: Wallet },
               ].map(s => (
                 <div key={s.label} className="bg-surface border border-border rounded-2xl p-4 text-center">
-                  <div className="text-2xl mb-1">{s.icon}</div>
+                  <s.Icon className="w-5 h-5 text-brand mx-auto mb-1" />
                   <div className="text-xl font-black text-brand">{s.value}</div>
                   <div className="text-[10px] text-muted mt-0.5 leading-tight">{s.label}</div>
                 </div>

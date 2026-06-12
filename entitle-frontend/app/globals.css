@@ -4,30 +4,30 @@
 
 /* ─── Dark Theme (Default) ─────────────────────────────────── */
 :root {
-  --color-background:   #2a3849;   /* deep navy, slightly lighter than #384959 */
-  --color-ink:          #e8f2fc;   /* near-white with blue tint                */
-  --color-secondary:    #bdddfc;   /* pale sky — #BDDDFC                       */
-  --color-muted:        #6a89a7;   /* steel blue — #6A89A7                     */
-  --color-brand:        #88bdf2;   /* sky blue — #88BDF2                       */
-  --color-brand-dark:   #bdddfc;   /* pale blue for dark-mode emphasis         */
-  --color-accent:       #6a89a7;   /* steel blue accent                        */
-  --color-surface:      #384959;   /* dark navy card surface — #384959         */
-  --color-surface-green:#1e3245;   /* deeper navy for badge/tag backgrounds    */
-  --color-border:       #4a6278;   /* mid-range blue-grey border               */
+  --color-background:   #111827;   /* deep charcoal, Zoom dark bg             */
+  --color-ink:          #F9FAFB;   /* near-white text                          */
+  --color-secondary:    #9CA3AF;   /* cool grey secondary                      */
+  --color-muted:        #6B7280;   /* muted grey                               */
+  --color-brand:        #2D8CFF;   /* Zoom's signature blue                    */
+  --color-brand-dark:   #60AEFF;   /* lighter blue for dark-mode hover         */
+  --color-accent:       #0B5CFF;   /* deeper electric blue accent              */
+  --color-surface:      #1F2937;   /* dark card surface                        */
+  --color-surface-green:#0B2050;   /* brand-tinted dark surface for badges     */
+  --color-border:       #374151;   /* subtle dark border                       */
 }
 
 /* ─── Light Theme ──────────────────────────────────────────── */
 :root.light {
-  --color-background:   #f0f7ff;   /* very pale blue-white                     */
-  --color-ink:          #384959;   /* dark navy text — #384959                 */
-  --color-secondary:    #4a6278;   /* medium blue-grey                         */
-  --color-muted:        #6a89a7;   /* steel blue — #6A89A7                     */
-  --color-brand:        #6a89a7;   /* steel blue as primary brand              */
-  --color-brand-dark:   #384959;   /* dark navy for hover/emphasis             */
-  --color-accent:       #88bdf2;   /* sky blue accent                          */
-  --color-surface:      #ffffff;   /* white card surface                       */
-  --color-surface-green:#bdddfc;   /* pale sky badge background — #BDDDFC     */
-  --color-border:       #c8dff4;   /* light blue border                        */
+  --color-background:   #F7F8FA;   /* Zoom's off-white page bg                 */
+  --color-ink:          #1F1F1F;   /* near-black text                          */
+  --color-secondary:    #4B5563;   /* medium grey                              */
+  --color-muted:        #9CA3AF;   /* muted grey                               */
+  --color-brand:        #0B5CFF;   /* Zoom electric blue                       */
+  --color-brand-dark:   #0041CC;   /* deeper blue for hover                    */
+  --color-accent:       #2D8CFF;   /* lighter blue accent                      */
+  --color-surface:      #FFFFFF;   /* pure white cards                         */
+  --color-surface-green:#EBF2FF;   /* pale blue badge background               */
+  --color-border:       #E5E7EB;   /* light border                             */
 }
 
 * {

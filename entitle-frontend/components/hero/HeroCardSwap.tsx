@@ -1,13 +1,19 @@
 'use client'
 import React from 'react'
 import CardSwap, { Card } from './CardSwap'
+import {
+  Satellite, AlertTriangle, Landmark, Bot,
+  BarChart3, Map, Coins, Activity
+} from 'lucide-react'
 
 /* ── Satellite + AI card ─────────────────────────────────────── */
 function SatelliteCard() {
   return (
     <Card>
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-9 h-9 rounded-xl bg-brand/15 flex items-center justify-center text-xl">🛰️</div>
+        <div className="w-9 h-9 rounded-xl bg-brand/15 flex items-center justify-center">
+          <Satellite className="w-5 h-5 text-brand" />
+        </div>
         <div>
           <div className="text-[10px] font-bold uppercase tracking-widest text-brand">Satellite + AI</div>
           <div className="text-sm font-bold text-ink">Crop Intelligence</div>
@@ -17,9 +23,8 @@ function SatelliteCard() {
       {/* Mock satellite scan strip */}
       <div className="relative rounded-xl overflow-hidden h-28 mb-4 bg-gradient-to-br from-[#2a4a2a] via-[#3a6a3a] to-[#4a7a3a]">
         <div className="absolute inset-0 opacity-30"
-          style={{ backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 6px,rgba(136,189,242,0.15) 6px,rgba(136,189,242,0.15) 7px),repeating-linear-gradient(90deg,transparent,transparent 6px,rgba(136,189,242,0.1) 6px,rgba(136,189,242,0.1) 7px)' }}
+          style={{ backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 6px,rgba(45,140,255,0.15) 6px,rgba(45,140,255,0.15) 7px),repeating-linear-gradient(90deg,transparent,transparent 6px,rgba(45,140,255,0.1) 6px,rgba(45,140,255,0.1) 7px)' }}
         />
-        {/* Scan line animation */}
         <div className="absolute inset-x-0 h-0.5 bg-brand/70 animate-[scan_2s_linear_infinite]" style={{ top: '40%' }} />
         <div className="absolute top-2 left-2 text-[9px] font-mono text-brand/80 bg-black/40 px-1.5 py-0.5 rounded">
           NDVI · Satara, MH
@@ -29,8 +34,9 @@ function SatelliteCard() {
             <div key={i} className="w-3 h-3 rounded-sm" style={{ background: c }} />
           ))}
         </div>
-        <div className="absolute bottom-2 left-2 text-[9px] font-mono text-red-300/90 bg-black/40 px-1.5 py-0.5 rounded">
-          ⚠ Drought Detected
+        <div className="absolute bottom-2 left-2 flex items-center gap-1 text-[9px] font-mono text-red-300/90 bg-black/40 px-1.5 py-0.5 rounded">
+          <AlertTriangle className="w-3 h-3" />
+          Drought Detected
         </div>
       </div>
 
@@ -70,7 +76,9 @@ function LiveDashboardCard() {
   return (
     <Card>
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-9 h-9 rounded-xl bg-accent/15 flex items-center justify-center text-xl">🏛️</div>
+        <div className="w-9 h-9 rounded-xl bg-accent/15 flex items-center justify-center">
+          <Activity className="w-5 h-5 text-accent" />
+        </div>
         <div>
           <div className="text-[10px] font-bold uppercase tracking-widest text-accent">Civic Infrastructure</div>
           <div className="text-sm font-bold text-ink">Live Entitlement Gap</div>
@@ -107,7 +115,9 @@ function BlockchainCard() {
   return (
     <Card>
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-9 h-9 rounded-xl bg-purple-500/15 flex items-center justify-center text-xl">🔗</div>
+        <div className="w-9 h-9 rounded-xl bg-purple-500/15 flex items-center justify-center">
+          <Landmark className="w-5 h-5 text-purple-400" />
+        </div>
         <div>
           <div className="text-[10px] font-bold uppercase tracking-widest text-purple-400">Polygon Network</div>
           <div className="text-sm font-bold text-ink">Proof of Entitlement</div>
@@ -130,7 +140,7 @@ function BlockchainCard() {
       </div>
 
       <div className="text-xs text-secondary leading-relaxed">
-        <span className="text-brand font-semibold">Tamper-proof.</span> If a government office disputes your eligibility, 
+        <span className="text-brand font-semibold">Tamper-proof.</span> If a government office disputes your eligibility,
         this timestamp proves you were found eligible on this date.
       </div>
     </Card>
@@ -147,7 +157,9 @@ function CoreAICard() {
   return (
     <Card>
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-9 h-9 rounded-xl bg-brand/15 flex items-center justify-center text-xl">🤖</div>
+        <div className="w-9 h-9 rounded-xl bg-brand/15 flex items-center justify-center">
+          <Bot className="w-5 h-5 text-brand" />
+        </div>
         <div>
           <div className="text-[10px] font-bold uppercase tracking-widest text-brand">AI Agent</div>
           <div className="text-sm font-bold text-ink">Scheme Matching</div>
@@ -182,18 +194,21 @@ function CoreAICard() {
 /* ── Main export ─────────────────────────────────────────────── */
 export default function HeroCardSwap() {
   return (
-    <div style={{ height: '420px', position: 'relative' }}>
+    <div style={{ height: '600px', position: 'relative' }}>
       <CardSwap
-        cardDistance={50}
-        verticalDistance={60}
-        delay={4500}
-        pauseOnHover={true}
-        cardHeight={320}
+        width={380}
+        height={420}
+        cardDistance={60}
+        verticalDistance={70}
+        delay={5000}
+        pauseOnHover={false}
+        easing="elastic"
+        skewAmount={4}
       >
-        <SatelliteCard />
-        <LiveDashboardCard />
-        <BlockchainCard />
-        <CoreAICard />
+        <Card><SatelliteCard /></Card>
+        <Card><LiveDashboardCard /></Card>
+        <Card><BlockchainCard /></Card>
+        <Card><CoreAICard /></Card>
       </CardSwap>
     </div>
   )

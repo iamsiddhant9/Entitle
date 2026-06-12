@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { ShieldCheck, Clock, Link2, CheckCircle2 } from 'lucide-react'
+import { ShieldCheck, Clock, Link2, CheckCircle2, Search, Shield, Zap, Lock, Globe, IndianRupee } from 'lucide-react'
+import { LucideIcon } from 'lucide-react'
 
 /* ── Mock certificate ─────────────────────────────────────────── */
 function CertificateCard() {
@@ -80,14 +81,14 @@ function DetailRow({
 }
 
 /* ── Timeline step ────────────────────────────────────────────── */
-function TimelineStep({ icon, title, body, active = false }: {
-  icon: string; title: string; body: string; active?: boolean
+function TimelineStep({ Icon, title, body, active = false }: {
+  Icon: LucideIcon; title: string; body: string; active?: boolean
 }) {
   return (
     <div className={`flex gap-4 ${active ? 'opacity-100' : 'opacity-60'}`}>
       <div className="flex flex-col items-center">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 border ${active ? 'bg-purple-500/20 border-purple-400/40' : 'bg-surface border-border'}`}>
-          {icon}
+        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border ${active ? 'bg-purple-500/20 border-purple-400/40' : 'bg-surface border-border'}`}>
+          <Icon className={`w-5 h-5 ${active ? 'text-purple-400' : 'text-muted'}`} />
         </div>
         <div className="w-px flex-1 bg-border mt-2" />
       </div>
@@ -144,19 +145,19 @@ export default function ProofOfEntitlement() {
             <div>
               {[
                 {
-                  icon: '🔍',
+                  Icon: Search,
                   title: 'AI finds you eligible',
                   body: 'ENTITLE scans 1,200+ schemes and satellite data to determine your exact eligibility profile.',
                 },
                 {
-                  icon: '🔗',
+                  Icon: Link2,
                   title: 'Record timestamped on Polygon',
                   body: 'Your eligibility is hashed and written to Polygon PoS — free, instant, and permanent. Block hash is yours forever.',
                 },
                 {
-                  icon: '🛡️',
+                  Icon: Shield,
                   title: 'Dispute-proof forever',
-                  body: 'If any official questions your eligibility, you show the on-chain timestamp. The blockchain doesn\'t lie.',
+                  body: "If any official questions your eligibility, you show the on-chain timestamp. The blockchain doesn't lie.",
                 },
               ].map((s, i) => (
                 <TimelineStep key={i} {...s} active={activeStep === i} />
@@ -166,13 +167,15 @@ export default function ProofOfEntitlement() {
             {/* Value props */}
             <div className="grid grid-cols-2 gap-3 mt-2">
               {[
-                { icon: '⚡', label: 'Instant issuance', sub: 'No waiting, no cost' },
-                { icon: '🔒', label: 'Immutable record', sub: 'Cannot be altered' },
-                { icon: '🌐', label: 'Publicly verifiable', sub: 'Anyone can check' },
-                { icon: '₹0', label: 'Free forever', sub: 'Polygon gas = fractions' },
+                { Icon: Zap, label: 'Instant issuance', sub: 'No waiting, no cost' },
+                { Icon: Lock, label: 'Immutable record', sub: 'Cannot be altered' },
+                { Icon: Globe, label: 'Publicly verifiable', sub: 'Anyone can check' },
+                { Icon: IndianRupee, label: 'Free forever', sub: 'Polygon gas = fractions' },
               ].map(p => (
                 <div key={p.label} className="bg-surface border border-border rounded-xl p-3 flex items-center gap-2.5">
-                  <span className="text-lg">{p.icon}</span>
+                  <div className="w-8 h-8 rounded-lg bg-brand/10 flex items-center justify-center shrink-0">
+                    <p.Icon className="w-4 h-4 text-brand" />
+                  </div>
                   <div>
                     <div className="text-xs font-semibold text-ink">{p.label}</div>
                     <div className="text-[10px] text-muted">{p.sub}</div>
