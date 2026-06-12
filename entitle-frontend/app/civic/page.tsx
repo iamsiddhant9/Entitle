@@ -45,11 +45,11 @@ export default function CivicPage() {
       <div className="py-20 px-6 sm:px-12 bg-background border-t border-border">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-3xl font-bold text-ink mb-8 text-center">Local Issue Tracking</h2>
-          <IssueFeed isReporting={isReporting} setIsReporting={setIsReporting} />
+          <IssueFeed />
         </div>
       </div>
 
-      {isReporting && <ReportIssueModal onClose={() => setIsReporting(false)} />}
+      {isReporting && <ReportIssueModal onClose={() => setIsReporting(false)} onReported={() => setIsReporting(false)} />}
     </main>
   )
 }

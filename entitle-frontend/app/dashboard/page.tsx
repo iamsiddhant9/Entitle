@@ -9,7 +9,9 @@ import { api } from '@/lib/api'
 import { useQuery } from '@tanstack/react-query'
 import type { Notification } from '@/lib/types'
 
-export default function DashboardPage() {
+import { Suspense } from 'react'
+
+function DashboardContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const isCivicTab = searchParams.get('tab') === 'civic'
@@ -94,5 +96,20 @@ export default function DashboardPage() {
         }}
       />
     </>
+  )
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 rounded-full border-2 border-brand border-t-transparent animate-spin" />
+          <p className="text-sm text-muted">Loading...</p>
+        </div>
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
   )
 }
