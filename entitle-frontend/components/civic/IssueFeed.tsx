@@ -23,7 +23,7 @@ const MOCK_ISSUES: CivicIssue[] = [
     status: 'submitted',
     timeAgo: '2 hours ago',
     severity: 'high',
-    imageUrl: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/images/civic/pothole.png',
   },
   {
     id: 'ISS-002',
@@ -33,7 +33,7 @@ const MOCK_ISSUES: CivicIssue[] = [
     status: 'reported',
     timeAgo: '5 hours ago',
     severity: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1605600659873-d808a1d81f21?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/images/civic/garbage.png',
   },
   {
     id: 'ISS-003',

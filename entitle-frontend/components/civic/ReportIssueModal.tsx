@@ -18,7 +18,7 @@ export default function ReportIssueModal({ onClose, onReported }: ReportIssueMod
 
   const handleUpload = () => {
     // Mocking an image upload by using a generic pothole image
-    setPhoto('https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=400')
+    setPhoto('/images/civic/pothole.png')
     setStep('scanning')
   }
 

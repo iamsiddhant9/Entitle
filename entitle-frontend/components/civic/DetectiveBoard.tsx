@@ -31,7 +31,7 @@ export default function DetectiveBoard() {
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-4 bg-red-500/80 [clip-path:polygon(50%_0,100%_100%,0_100%)] shadow-sm z-10" />
                 {/* Actual Evidence Image */}
                 <img 
-                  src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80&w=400" 
+                  src="/images/civic/document.png" 
                   alt="Verified Evidence" 
                   className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-luminosity hover:mix-blend-normal transition-all duration-300"
                 />
