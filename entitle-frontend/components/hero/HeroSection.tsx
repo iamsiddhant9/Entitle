@@ -1,14 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import StatBar from './StatBar'
-import ChatMockup from './ChatMockup'
+import HeroCardSwap from './HeroCardSwap'
 import DemoModal from './DemoModal'
 import TypewriterTitle from './TypewriterTitle'
 import { ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 -right-40 w-96 h-96 rounded-full bg-brand/5 blur-3xl" />
@@ -60,12 +60,12 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Chat mockup */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Glow */}
+          {/* Right: CardSwap feature showcase */}
+          <div className="flex justify-center lg:justify-end w-full">
+            <div className="relative w-full max-w-sm">
+              {/* Ambient glow */}
               <div className="absolute inset-0 -z-10 bg-brand/10 rounded-3xl blur-2xl scale-110" />
-              <ChatMockup />
+              <HeroCardSwap />
             </div>
           </div>
         </div>

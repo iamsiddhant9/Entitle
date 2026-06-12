@@ -34,8 +34,8 @@ const config: Config = {
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         borderPulse: {
-          '0%, 100%': { boxShadow: '0 0 0 1px #1D9E75, 0 4px 20px rgba(29,158,117,0.12)' },
-          '50%': { boxShadow: '0 0 0 2px #1D9E75, 0 4px 28px rgba(29,158,117,0.22)' },
+          '0%, 100%': { boxShadow: '0 0 0 1px #88BDF2, 0 4px 20px rgba(136,189,242,0.12)' },
+          '50%': { boxShadow: '0 0 0 2px #88BDF2, 0 4px 28px rgba(136,189,242,0.22)' },
         },
       },
       animation: {

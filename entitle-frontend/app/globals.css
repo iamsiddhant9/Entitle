@@ -4,30 +4,30 @@
 
 /* ─── Dark Theme (Default) ─────────────────────────────────── */
 :root {
-  --color-background:   #09090b;
-  --color-ink:          #fafafe;
-  --color-secondary:    #a1a1aa;
-  --color-muted:        #71717a;
-  --color-brand:        #1D9E75;
-  --color-brand-dark:   #4ade80;
-  --color-accent:       #3b82f6;
-  --color-surface:      #18181b;
-  --color-surface-green:#064e3b;
-  --color-border:       #27272a;
+  --color-background:   #2a3849;   /* deep navy, slightly lighter than #384959 */
+  --color-ink:          #e8f2fc;   /* near-white with blue tint                */
+  --color-secondary:    #bdddfc;   /* pale sky — #BDDDFC                       */
+  --color-muted:        #6a89a7;   /* steel blue — #6A89A7                     */
+  --color-brand:        #88bdf2;   /* sky blue — #88BDF2                       */
+  --color-brand-dark:   #bdddfc;   /* pale blue for dark-mode emphasis         */
+  --color-accent:       #6a89a7;   /* steel blue accent                        */
+  --color-surface:      #384959;   /* dark navy card surface — #384959         */
+  --color-surface-green:#1e3245;   /* deeper navy for badge/tag backgrounds    */
+  --color-border:       #4a6278;   /* mid-range blue-grey border               */
 }
 
 /* ─── Light Theme ──────────────────────────────────────────── */
 :root.light {
-  --color-background:   #f9fafb;
-  --color-ink:          #111827;
-  --color-secondary:    #4b5563;
-  --color-muted:        #9ca3af;
-  --color-brand:        #1D9E75;
-  --color-brand-dark:   #059669;
-  --color-accent:       #2563eb;
-  --color-surface:      #ffffff;
-  --color-surface-green:#d1fae5;
-  --color-border:       #e5e7eb;
+  --color-background:   #f0f7ff;   /* very pale blue-white                     */
+  --color-ink:          #384959;   /* dark navy text — #384959                 */
+  --color-secondary:    #4a6278;   /* medium blue-grey                         */
+  --color-muted:        #6a89a7;   /* steel blue — #6A89A7                     */
+  --color-brand:        #6a89a7;   /* steel blue as primary brand              */
+  --color-brand-dark:   #384959;   /* dark navy for hover/emphasis             */
+  --color-accent:       #88bdf2;   /* sky blue accent                          */
+  --color-surface:      #ffffff;   /* white card surface                       */
+  --color-surface-green:#bdddfc;   /* pale sky badge background — #BDDDFC     */
+  --color-border:       #c8dff4;   /* light blue border                        */
 }
 
 * {
@@ -66,3 +66,9 @@ body {
   }
 }
 
+/* Satellite scan-line animation */
+@keyframes scan {
+  0% { top: 0%; opacity: 1; }
+  95% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
