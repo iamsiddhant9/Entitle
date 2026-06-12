@@ -56,7 +56,7 @@ export default function ChatMockup() {
         {phase !== 'greeting' && (
           <div className="flex justify-end animate-fadeUp">
             <div className="bg-white text-background text-sm rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] leading-relaxed">
-              I&apos;m 48, carpenter, OBC category, from Satara. Family of four.
+              I&apos;m 48, carpenter, OBC category, from Nagpur. Family of four.
             </div>
           </div>
         )}
@@ -70,7 +70,7 @@ export default function ChatMockup() {
 
         {/* Result card */}
         {(phase === 'result' || phase === 'followup') && (
-          <div className="animate-fadeUp bg-surface-green border border-brand/20 rounded-2xl p-3">
+          <div className="animate-fadeUp bg-surface-brand border border-brand/20 rounded-2xl p-3">
             <div className="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">
               ✓ Scanning Complete · 3 schemes found
             </div>

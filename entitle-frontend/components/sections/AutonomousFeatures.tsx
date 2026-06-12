@@ -15,8 +15,8 @@ const features = [
     title: 'New scheme alerts',
     body: 'Government announces new schemes daily. ENTITLE monitors official gazettes, PIB, and state portals so you\'re notified within hours — not months — of a relevant new scheme.',
     tag: 'Real-time',
-    tagColor: 'bg-surface-green text-brand-dark',
-    iconBg: 'bg-surface-green text-brand',
+    tagColor: 'bg-surface-brand text-brand-dark',
+    iconBg: 'bg-surface-brand text-brand',
   },
   {
     Icon: FolderOpen,
@@ -34,7 +34,7 @@ export default function AutonomousFeatures() {
       <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-green px-3 py-1.5 rounded-full border border-brand/20">
+          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-brand px-3 py-1.5 rounded-full border border-brand/20">
             Autonomous features
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-ink tracking-tight mb-4">

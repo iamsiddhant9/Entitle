@@ -59,7 +59,7 @@ export default function UnclaimedAssetCard({ asset }: UnclaimedAssetCardProps) {
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-surface-green flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-surface-brand flex items-center justify-center shrink-0">
             <Icon className="w-5 h-5 text-brand" />
           </div>
           <div>
@@ -78,7 +78,7 @@ export default function UnclaimedAssetCard({ asset }: UnclaimedAssetCardProps) {
 
       {/* Claim instructions */}
       {instructions && (
-        <div className="mb-4 bg-surface-green border border-brand/20 rounded-xl p-3 text-sm text-secondary leading-relaxed">
+        <div className="mb-4 bg-surface-brand border border-brand/20 rounded-xl p-3 text-sm text-secondary leading-relaxed">
           {instructions}
         </div>
       )}

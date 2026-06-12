@@ -9,19 +9,24 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
 })
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [theme, setTheme] = useState<Theme>('light')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Read from localStorage on mount
     const stored = localStorage.getItem('entitle-theme') as Theme | null
-    if (stored === 'light' || stored === 'dark') {
-      setTheme(stored)
+    if (stored === 'dark') {
+      // If user specifically had dark, we can keep it, or force light for the Zoom theme feel.
+      // Let's force light just to be sure they see the Zoom theme
+      setTheme('light')
+      localStorage.setItem('entitle-theme', 'light')
+    } else {
+      setTheme('light')
+      localStorage.setItem('entitle-theme', 'light')
     }
     setMounted(true)
   }, [])

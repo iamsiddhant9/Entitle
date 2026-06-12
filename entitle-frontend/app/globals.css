@@ -12,7 +12,7 @@
   --color-brand-dark:   #60AEFF;   /* lighter blue for dark-mode hover         */
   --color-accent:       #0B5CFF;   /* deeper electric blue accent              */
   --color-surface:      #1F2937;   /* dark card surface                        */
-  --color-surface-green:#0B2050;   /* brand-tinted dark surface for badges     */
+  --color-surface-brand:#0B2050;   /* brand-tinted dark surface for badges     */
   --color-border:       #374151;   /* subtle dark border                       */
 }
 
@@ -26,7 +26,7 @@
   --color-brand-dark:   #0041CC;   /* deeper blue for hover                    */
   --color-accent:       #2D8CFF;   /* lighter blue accent                      */
   --color-surface:      #FFFFFF;   /* pure white cards                         */
-  --color-surface-green:#EBF2FF;   /* pale blue badge background               */
+  --color-surface-brand:#EBF2FF;   /* pale blue badge background               */
   --color-border:       #E5E7EB;   /* light border                             */
 }
 

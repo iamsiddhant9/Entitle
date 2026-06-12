@@ -31,7 +31,7 @@ export default function ResultCard({ data }: ResultCardProps) {
   if (!data) return null
 
   return (
-    <div className="bg-surface-green border border-brand/20 rounded-2xl p-4 w-full animate-fadeUp">
+    <div className="bg-surface-brand border border-brand/20 rounded-2xl p-4 w-full animate-fadeUp">
       {/* Header */}
       <div className="flex items-center gap-2 mb-3">
         <div className="w-7 h-7 rounded-full bg-brand flex items-center justify-center">

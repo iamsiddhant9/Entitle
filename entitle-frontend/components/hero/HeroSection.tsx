@@ -20,7 +20,7 @@ export default function HeroSection() {
           {/* Left: Copy */}
           <div className="lg:pt-10">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2.5 bg-surface-green border border-brand/20 rounded-full px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2.5 bg-surface-brand border border-brand/20 rounded-full px-4 py-2 mb-8">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand" />
@@ -61,7 +61,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right: CardSwap feature showcase */}
-          <div className="flex justify-center lg:justify-end w-full">
+          <div className="flex justify-center lg:justify-end w-full mt-16 lg:mt-0 lg:pt-52">
             <div className="relative w-full max-w-sm">
               {/* Ambient glow */}
               <div className="absolute inset-0 -z-10 bg-brand/10 rounded-3xl blur-2xl scale-110" />

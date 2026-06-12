@@ -65,7 +65,7 @@ export default function DashboardShell({
 
         {/* Notification banner */}
         {unreadNotifs.length > 0 && !notifDismissed && (
-          <div className="mb-6 flex items-start gap-3 bg-surface-green border border-brand/20 rounded-2xl px-5 py-4 animate-fadeUp">
+          <div className="mb-6 flex items-start gap-3 bg-surface-brand border border-brand/20 rounded-2xl px-5 py-4 animate-fadeUp">
             <Bell className="w-5 h-5 text-brand shrink-0 mt-0.5" />
             <div className="flex-1">
               <div className="text-sm font-semibold text-ink">{unreadNotifs[0].title}</div>
@@ -122,7 +122,7 @@ export default function DashboardShell({
           <div className="space-y-4">
             {entitlements.length === 0 ? (
               <div className="text-center py-16 text-muted">
-                <div className="w-12 h-12 rounded-2xl bg-surface-green border border-brand/20 flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-surface-brand border border-brand/20 flex items-center justify-center mx-auto mb-3">
                   <Search className="w-6 h-6 text-brand" />
                 </div>
                 <div className="font-semibold text-ink mb-1">No entitlements yet</div>
@@ -149,7 +149,7 @@ export default function DashboardShell({
             </div>
             {entitlements.length === 0 ? (
               <div className="text-center py-16 text-muted">
-                <div className="w-12 h-12 rounded-2xl bg-surface-green border border-brand/20 flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-surface-brand border border-brand/20 flex items-center justify-center mx-auto mb-3">
                   <ClipboardList className="w-6 h-6 text-brand" />
                 </div>
                 <div className="font-semibold text-ink mb-1">No applications yet</div>
@@ -165,7 +165,7 @@ export default function DashboardShell({
           <div className="grid sm:grid-cols-2 gap-4">
             {assets.length === 0 ? (
               <div className="col-span-2 text-center py-16 text-muted">
-                <div className="w-12 h-12 rounded-2xl bg-surface-green border border-brand/20 flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-surface-brand border border-brand/20 flex items-center justify-center mx-auto mb-3">
                   <Banknote className="w-6 h-6 text-brand" />
                 </div>
                 <div className="font-semibold text-ink mb-1">No unclaimed assets found</div>

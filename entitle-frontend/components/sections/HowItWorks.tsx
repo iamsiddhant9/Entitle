@@ -17,7 +17,7 @@ const steps = [
     title: 'Scan',
     body: 'Our AI scans every central and state scheme — 1,200+ and counting. It cross-references your profile to find exact matches with confidence scores.',
     color: 'text-brand',
-    bg: 'bg-surface-green',
+    bg: 'bg-surface-brand',
     border: 'animate-borderPulse',
     badge: '1,200+ schemes checked',
   },
@@ -38,7 +38,7 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-green px-3 py-1.5 rounded-full border border-brand/20">
+          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-brand px-3 py-1.5 rounded-full border border-brand/20">
             How it works
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-ink tracking-tight mb-4">
@@ -70,7 +70,7 @@ export default function HowItWorks() {
 
                 {/* Badge for scan step */}
                 {step.badge && (
-                  <div className="inline-flex items-center gap-1.5 bg-surface-green border border-brand/20 rounded-full px-3 py-1 mb-4">
+                  <div className="inline-flex items-center gap-1.5 bg-surface-brand border border-brand/20 rounded-full px-3 py-1 mb-4">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
                     <span className="text-[11px] font-semibold text-brand-dark">{step.badge}</span>
                   </div>

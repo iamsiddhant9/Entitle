@@ -10,29 +10,29 @@ function CertificateCard() {
 
   return (
     <div className="relative">
-      {/* Glow */}
-      <div className="absolute inset-0 bg-purple-500/10 rounded-3xl blur-2xl scale-110 pointer-events-none" />
+      {/* Glow — brand blue */}
+      <div className="absolute inset-0 bg-brand/10 rounded-3xl blur-2xl scale-110 pointer-events-none" />
 
-      <div className="relative border border-purple-400/30 bg-gradient-to-br from-[#1a1040] via-surface to-[#0f1a35] rounded-3xl p-6 shadow-2xl">
+      <div className="relative border border-brand/25 bg-gradient-to-br from-surface-brand via-surface to-surface rounded-3xl p-6 shadow-2xl">
         {/* Header strip */}
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-purple-500/20 flex items-center justify-center">
-              <ShieldCheck className="w-4 h-4 text-purple-400" />
+            <div className="w-8 h-8 rounded-xl bg-brand/15 flex items-center justify-center">
+              <ShieldCheck className="w-4 h-4 text-brand" />
             </div>
             <div>
-              <div className="text-[9px] font-bold uppercase tracking-widest text-purple-400">ENTITLE Protocol</div>
+              <div className="text-[9px] font-bold uppercase tracking-widest text-brand">ENTITLE Protocol</div>
               <div className="text-xs font-bold text-ink">Entitlement Certificate</div>
             </div>
           </div>
-          <div className="flex items-center gap-1 bg-purple-400/15 text-purple-300 text-[9px] font-bold px-2.5 py-1 rounded-full border border-purple-400/20">
+          <div className="flex items-center gap-1 bg-brand/10 text-brand text-[9px] font-bold px-2.5 py-1 rounded-full border border-brand/20">
             <CheckCircle2 className="w-3 h-3" />
             Verified On-chain
           </div>
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent mb-5" />
+        <div className="h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent mb-5" />
 
         {/* Details */}
         <div className="space-y-3 mb-5">
@@ -45,7 +45,7 @@ function CertificateCard() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent mb-4" />
+        <div className="h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent mb-4" />
 
         {/* Footer */}
         <div className="flex items-center justify-between">
@@ -55,7 +55,7 @@ function CertificateCard() {
           </div>
           <a
             href="#"
-            className="flex items-center gap-1 text-[10px] font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+            className="flex items-center gap-1 text-[10px] font-semibold text-brand hover:text-brand-dark transition-colors"
             onClick={e => e.preventDefault()}
           >
             <Link2 className="w-3 h-3" />
@@ -85,15 +85,15 @@ function TimelineStep({ Icon, title, body, active = false }: {
   Icon: LucideIcon; title: string; body: string; active?: boolean
 }) {
   return (
-    <div className={`flex gap-4 ${active ? 'opacity-100' : 'opacity-60'}`}>
+    <div className={`flex gap-4 ${active ? 'opacity-100' : 'opacity-50'}`}>
       <div className="flex flex-col items-center">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border ${active ? 'bg-purple-500/20 border-purple-400/40' : 'bg-surface border-border'}`}>
-          <Icon className={`w-5 h-5 ${active ? 'text-purple-400' : 'text-muted'}`} />
+        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${active ? 'bg-brand/15 border-brand/40' : 'bg-surface border-border'}`}>
+          <Icon className={`w-5 h-5 transition-colors duration-300 ${active ? 'text-brand' : 'text-muted'}`} />
         </div>
         <div className="w-px flex-1 bg-border mt-2" />
       </div>
       <div className="pb-6">
-        <div className={`text-sm font-bold ${active ? 'text-ink' : 'text-secondary'} mb-1`}>{title}</div>
+        <div className={`text-sm font-bold mb-1 transition-colors duration-300 ${active ? 'text-ink' : 'text-secondary'}`}>{title}</div>
         <div className="text-xs text-muted leading-relaxed">{body}</div>
       </div>
     </div>
@@ -110,21 +110,21 @@ export default function ProofOfEntitlement() {
 
   return (
     <section id="proof" className="py-24 bg-background relative overflow-hidden">
-      {/* Ambient */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-brand/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient — all blue */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-brand/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-5 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-400/20">
+          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-brand px-3 py-1.5 rounded-full border border-brand/20">
             Blockchain · Polygon PoS
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-ink tracking-tight mb-4">
             Proof of Entitlement
           </h2>
           <p className="text-lg text-secondary max-w-2xl mx-auto">
-            When ENTITLE confirms your eligibility, it issues a <span className="text-purple-400 font-semibold">tamper-proof, timestamped record</span> on the Polygon blockchain. Your rights, permanently on-chain.
+            When ENTITLE confirms your eligibility, it issues a <span className="text-brand font-semibold">tamper-proof, timestamped record</span> on the Polygon blockchain. Your rights, permanently on-chain.
           </p>
         </div>
 

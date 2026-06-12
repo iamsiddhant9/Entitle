@@ -14,7 +14,7 @@ const config: Config = {
         'brand-dark': 'var(--color-brand-dark)',
         accent: 'var(--color-accent)',
         surface: 'var(--color-surface)',
-        'surface-green': 'var(--color-surface-green)',
+        'surface-brand': 'var(--color-surface-brand)',
         border: 'var(--color-border)',
       },
       fontFamily: {
@@ -34,8 +34,8 @@ const config: Config = {
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         borderPulse: {
-          '0%, 100%': { boxShadow: '0 0 0 1px #88BDF2, 0 4px 20px rgba(136,189,242,0.12)' },
-          '50%': { boxShadow: '0 0 0 2px #88BDF2, 0 4px 28px rgba(136,189,242,0.22)' },
+          '0%, 100%': { boxShadow: '0 0 0 1px #2D8CFF, 0 4px 20px rgba(45,140,255,0.12)' },
+          '50%': { boxShadow: '0 0 0 2px #2D8CFF, 0 4px 28px rgba(45,140,255,0.22)' },
         },
       },
       animation: {

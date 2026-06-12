@@ -59,8 +59,8 @@ const placeNow = (
 /* ─── CardSwap ──────────────────────────────────────────────────── */
 interface CardSwapProps {
   children: ReactNode
-  width?: number
-  height?: number
+  width?: number | string
+  height?: number | string
   cardDistance?: number
   verticalDistance?: number
   delay?: number

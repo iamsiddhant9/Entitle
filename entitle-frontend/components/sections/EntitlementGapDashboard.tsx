@@ -97,7 +97,7 @@ export default function EntitlementGapDashboard() {
       <div className="max-w-6xl mx-auto px-5 relative z-10">
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-green px-3 py-1.5 rounded-full border border-brand/20">
+          <div className="inline-flex items-center gap-2 text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-brand px-3 py-1.5 rounded-full border border-brand/20">
             <span className="w-2 h-2 bg-brand rounded-full animate-ping inline-block" />
             Live · Updated every second
           </div>
@@ -113,7 +113,7 @@ export default function EntitlementGapDashboard() {
           {/* Left: Big counter */}
           <div ref={sectionRef}>
             {/* Hero number */}
-            <div className="bg-surface-green border border-brand/20 rounded-3xl p-8 mb-6 text-center relative overflow-hidden">
+            <div className="bg-surface-brand border border-brand/20 rounded-3xl p-8 mb-6 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-accent/5 pointer-events-none" />
               <div className="text-xs font-bold uppercase tracking-widest text-brand mb-3">
                 Total unclaimed found today
@@ -186,7 +186,7 @@ export default function EntitlementGapDashboard() {
         </div>
 
         {/* Bottom banner */}
-        <div className="mt-12 bg-gradient-to-r from-brand/10 via-surface-green to-accent/10 border border-brand/20 rounded-2xl p-6 text-center">
+        <div className="mt-12 bg-gradient-to-r from-brand/10 via-surface-brand to-accent/10 border border-brand/20 rounded-2xl p-6 text-center">
           <p className="text-base font-semibold text-ink">
             ENTITLE isn&apos;t just a personal tool —{' '}
             <span className="text-brand">it&apos;s civic infrastructure.</span>

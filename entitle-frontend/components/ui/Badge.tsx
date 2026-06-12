@@ -3,7 +3,7 @@ import React from 'react'
 type BadgeVariant = 'green' | 'blue' | 'amber' | 'red' | 'gray' | 'dark'
 
 const variantStyles: Record<BadgeVariant, string> = {
-  green: 'bg-surface-green text-brand-dark border border-brand/20',
+  green: 'bg-surface-brand text-brand-dark border border-brand/20',
   blue: 'bg-blue-50 text-blue-700 border border-blue-200',
   amber: 'bg-amber-50 text-amber-700 border border-amber-200',
   red: 'bg-red-50 text-red-700 border border-red-200',

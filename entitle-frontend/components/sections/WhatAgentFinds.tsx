@@ -16,7 +16,7 @@ const finds = [
     title: 'Dormant bank accounts',
     body: 'Accounts inactive for 10+ years transfer to RBI\'s DEAF fund. ENTITLE checks your name and family details across all registered banks to surface unclaimed balances.',
     count: '₹78,000 Cr pool',
-    color: 'bg-surface-green text-brand',
+    color: 'bg-surface-brand text-brand',
   },
   {
     emoji: '🛡️',
@@ -42,7 +42,7 @@ export default function WhatAgentFinds() {
       <div className="max-w-6xl mx-auto px-5">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-green px-3 py-1.5 rounded-full border border-brand/20">
+          <div className="inline-block text-xs font-bold text-brand uppercase tracking-widest mb-4 bg-surface-brand px-3 py-1.5 rounded-full border border-brand/20">
             What the agent finds
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-ink tracking-tight mb-4">

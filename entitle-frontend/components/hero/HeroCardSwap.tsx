@@ -21,16 +21,16 @@ function SatelliteCard() {
       </div>
 
       {/* Mock satellite scan strip */}
-      <div className="relative rounded-xl overflow-hidden h-28 mb-4 bg-gradient-to-br from-[#2a4a2a] via-[#3a6a3a] to-[#4a7a3a]">
+      <div className="relative rounded-xl overflow-hidden h-28 mb-4 bg-gradient-to-br from-brand/20 via-brand-dark/20 to-accent/20">
         <div className="absolute inset-0 opacity-30"
           style={{ backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 6px,rgba(45,140,255,0.15) 6px,rgba(45,140,255,0.15) 7px),repeating-linear-gradient(90deg,transparent,transparent 6px,rgba(45,140,255,0.1) 6px,rgba(45,140,255,0.1) 7px)' }}
         />
         <div className="absolute inset-x-0 h-0.5 bg-brand/70 animate-[scan_2s_linear_infinite]" style={{ top: '40%' }} />
         <div className="absolute top-2 left-2 text-[9px] font-mono text-brand/80 bg-black/40 px-1.5 py-0.5 rounded">
-          NDVI · Satara, MH
+          NDVI · Nagpur, MH
         </div>
         <div className="absolute bottom-2 right-2 flex gap-1">
-          {['#c8f090','#90d060','#d4a060','#d06030'].map((c, i) => (
+          {['#EBF2FF','#88BDF2','#2D8CFF','#0B5CFF'].map((c, i) => (
             <div key={i} className="w-3 h-3 rounded-sm" style={{ background: c }} />
           ))}
         </div>
@@ -89,7 +89,7 @@ function LiveDashboardCard() {
         </div>
       </div>
 
-      <div className="text-center py-4 border border-border rounded-xl mb-4 bg-surface-green/30">
+      <div className="text-center py-4 border border-border rounded-xl mb-4 bg-surface-brand/30">
         <div className="text-3xl font-black text-ink tracking-tight tabular-nums">{fmt(count)}</div>
         <div className="text-xs text-muted mt-1">found for <span className="text-brand font-bold">{users} users</span> today</div>
       </div>
@@ -115,20 +115,20 @@ function BlockchainCard() {
   return (
     <Card>
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-9 h-9 rounded-xl bg-purple-500/15 flex items-center justify-center">
-          <Landmark className="w-5 h-5 text-purple-400" />
+        <div className="w-9 h-9 rounded-xl bg-brand/15 flex items-center justify-center">
+          <Landmark className="w-5 h-5 text-brand" />
         </div>
         <div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-purple-400">Polygon Network</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-brand">Polygon Network</div>
           <div className="text-sm font-bold text-ink">Proof of Entitlement</div>
         </div>
       </div>
 
       {/* Mock certificate */}
-      <div className="border border-purple-400/30 rounded-xl p-3 mb-3 bg-gradient-to-br from-purple-500/5 to-brand/5">
+      <div className="border border-brand/25 rounded-xl p-3 mb-3 bg-surface-brand/40">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[9px] font-bold uppercase tracking-widest text-purple-400">Entitlement Certificate</span>
-          <span className="text-[9px] bg-purple-400/20 text-purple-300 px-2 py-0.5 rounded-full font-bold">✓ On-chain</span>
+          <span className="text-[9px] font-bold uppercase tracking-widest text-brand">Entitlement Certificate</span>
+          <span className="text-[9px] bg-brand/15 text-brand px-2 py-0.5 rounded-full font-bold">✓ On-chain</span>
         </div>
         <div className="text-xs text-ink font-semibold mb-1">PM Kisan Samman Nidhi</div>
         <div className="text-[9px] text-muted font-mono mb-2">0x3f8a...d92c · Block #48,291,033</div>
@@ -194,12 +194,12 @@ function CoreAICard() {
 /* ── Main export ─────────────────────────────────────────────── */
 export default function HeroCardSwap() {
   return (
-    <div style={{ height: '600px', position: 'relative' }}>
+    <div className="w-full max-w-[380px] mx-auto h-[480px] sm:h-[550px] md:h-[600px] relative">
       <CardSwap
-        width={380}
-        height={420}
-        cardDistance={60}
-        verticalDistance={70}
+        width="100%"
+        height="70%"
+        cardDistance={40}
+        verticalDistance={50}
         delay={5000}
         pauseOnHover={false}
         easing="elastic"
